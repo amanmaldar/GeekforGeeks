@@ -134,7 +134,99 @@ int main() {
 
 //------------------------------------------------------------------------------------------------------------------------
 
+
+// This is a sample examples showing how the set is used withing a map.
+// This data structure is used for apriori algorithm
+
+// set::count
+#include <iostream>
+#include <set>
+#include <map>
+using namespace std;
+
+typedef struct{
+    map<set<int>,int> counter;
+    int k;
+}lk;
+
+int main ()
+{
+    lk c;
+    c.k=1;
+    map<set<int>,int> counter;
+    std::set<int> myset;
+    set<int> n_set;
+
+  // set some initial values:
+  
+    n_set.insert(3);
+    n_set.insert(3);        // duplicate values are ignored // check usinf n_set.count(3);
+    c.counter[n_set] =2;    //n_set refers to recent insertion TRICKY
+    // This is how we will access the map element every time.
+    std::cout << "Testing: " 
+      << c.counter.count(n_set)<< " " <<  c.counter[n_set] << std::endl;
+    
+    // c.counter.count(n_set)
+    // this is map functinality to count number of entries in map.
+    // since we are using set, answer would be always 1
+    n_set.insert(4);
+    c.counter[n_set] += 3;
+    std::cout << "Testing: " 
+      << c.counter.count(n_set)<< " " <<  c.counter[n_set] << std::endl;
+
+  return 0;
+}
+
+//------------------------------------------------------------------------------------------------------------------------
+// vector of struct. Intitilaize struct elemets with zero?
+
+// data structure for confidence of apriori
+#include <iostream>
+#include <string>
+#include <utility>
+#include <set>
+#include <algorithm>
+#include <map>
+
+using namespace std;
+typedef struct{
+    int a=0;
+    int b=0;
+    int c=0;
+    int d=0;
+}data;
+vector <data> vec;
+
+int main()
+{
+    data d1,d2;
+    d1.a= 1;
+    d1.b=2;
+    d1.c=3;
+    d1.d=4;
+    vec.push_back(d1);
+    d2.a= 6;
+    d2.b=5;
+    vec.push_back(d2);
+    vector <data> :: iterator it;
+    for (it= vec.begin();it!=vec.end();it++){
+        //cout << it->a;
+        cout << it->a << " " << it->b << " " << it->c << " " << it->d 
+        << " " << endl;
+    }
+    
+  }
+
+
 //------------------------------------------------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------------------------------------------------
+
 
