@@ -254,6 +254,36 @@ int main ()
 
 //------------------------------------------------------------------------------------------------------------------------
 
+// set of pairs - TRICKY
+
+// Example program
+#include <iostream>
+#include <string>
+#include <utility>
+#include <set>
+#include <algorithm>
+#include <typeinfo> 
+using namespace std;
+
+int main()
+{
+    //std::pair<int,int> p1;
+
+    pair<int,int> p1(2,1);  //wrong
+    pair <int, int> tmp;
+    set<pair<int,int>> s;
+    s.insert(make_pair(10,20));
+    s.insert(make_pair(30,40));
+    s.insert(make_pair(50,60));
+    tmp.first = 50;
+    tmp.second = 60;
+    
+    // set<std::pair<int, int> >::iterator it = s.begin();
+    set<std::pair<int, int> >::iterator it = s.find(tmp);
+    //cout << typeid(*it) << endl;
+    cout << it->first << "," << it->second << endl;
+}
+
 //------------------------------------------------------------------------------------------------------------------------
 
 
