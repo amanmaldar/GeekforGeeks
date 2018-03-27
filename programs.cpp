@@ -255,7 +255,6 @@ int main ()
 //------------------------------------------------------------------------------------------------------------------------
 
 // set of pairs - TRICKY
-
 // Example program
 #include <iostream>
 #include <string>
@@ -279,7 +278,7 @@ int main()
     tmp.second = 60;
     
     // set<std::pair<int, int> >::iterator it = s.begin();
-    set<std::pair<int, int> >::iterator it = s.find(tmp); 
+    set<std::pair<int, int> >::iterator it = s.find(tmp);
     //cout << typeid(*it) << endl;
     cout << it->first << "," << it->second << endl;
 }
