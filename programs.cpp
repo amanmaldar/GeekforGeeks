@@ -13,6 +13,7 @@ typedef struct{
     int k;
 }lk;
 
+
 int main ()
 {
     lk c;
