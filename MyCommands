@@ -1,0 +1,6 @@
+//See memory used by process
+
+ps -eo size,pid,user,command --sort -size | awk '{ hr=$1/1024 ; printf("%13.2f MB ",hr) } { for ( x=4 ; x<=NF ; x++ )
+{ printf("%s ",$x) } print "" }' |cut -d "" -f2 | cut -d "-" -f1 | grep "process Name"
+
+ref - https://stackoverflow.com/questions/131303/how-to-measure-actual-memory-usage-of-an-application-or-process?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
